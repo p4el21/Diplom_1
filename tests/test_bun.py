@@ -1,5 +1,5 @@
 import allure
-from bun import Bun
+from ya_praktikum.bun import Bun
 
 class TestBun:
     @allure.title('Проверка инициализации булочки')

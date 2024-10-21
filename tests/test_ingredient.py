@@ -1,6 +1,6 @@
 import allure
 import pytest
-from ingredient import Ingredient
+from ya_praktikum.ingredient import Ingredient
 
 class TestIngredient:
     @allure.title('Проверка инициализации ингридиента')
