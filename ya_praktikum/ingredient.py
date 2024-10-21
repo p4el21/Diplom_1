@@ -1,4 +1,3 @@
-import pytest
 class Ingredient:
     """
     Модель ингредиента.

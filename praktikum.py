@@ -1,10 +1,8 @@
 from typing import List
-
-from praktikum_1.bun import Bun
-from praktikum_1.burger import Burger
-from praktikum_1 import Database
-from praktikum_1 import Ingredient
-
+from ya_praktikum.bun import Bun
+from ya_praktikum.burger import Burger
+from ya_praktikum.database import Database
+from ya_praktikum.ingredient import Ingredient
 
 def main():
     # Инициализируем базу данных

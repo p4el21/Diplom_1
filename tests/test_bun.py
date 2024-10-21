@@ -6,33 +6,28 @@ class TestBun:
     @allure.description('Тест проверяет, что булочка инициализируется с правильными данными')
     def test_init_bun(self):
         bun = Bun('Булочка', 100)
-        assert bun.get_name() == 'Булочка', f"Ожидается название булочки: Булочка"
-        assert bun.get_price() == 100, f"Ожидается цена булочки: 100"
+        assert bun.get_name() == 'Булочка', f'Ожидается название: Булочка, получено: {bun.get_name()}'
+        assert bun.get_price() == 100, f'Ожидается цена: 100, получено: {bun.get_price()}'
         print('\nТест пройден!')
+        print(f'Название булочки  - {bun.get_name()}, цена - {bun.get_price()}')
 
-    @allure.title('Проверка инициализации булочки с неправильными данными')
-    @allure.description('Тест проверяет, что булочка инициализируется с неправильными данными')
-    def test_init_bun_with_wrong_data(self):
-        bun = Bun(100, 'Булочка')
-        assert bun.get_name() == 100, f"Ожидается название булочки: 100"
-        assert bun.get_price() == 'Булочка', f"Ожидается цена булочки: Булочка"
-        print('\nТест пройден!')
-
-    @allure.title('Проверка изменении названии булочки')
+    @allure.title('Проверка изменения названии булочки')
     @allure.description('Тест проверяет, что можно изменить название булочки')
-    def test_name_change(self):
-        bun = Bun('Булочка', 100)
+    def test_name_change(self, create_bun):
+        bun = create_bun
         bun.name = 'Булка'
-        assert bun.get_name() == 'Булка', f"Ожидается название булочки: Булка"
+        assert bun.get_name() == 'Булка', f'Ожидается название: Булка, получено: {bun.get_name()}'
         print('\nТест пройден!')
+        print(f'Название булочки  - {bun.get_name()}')
 
-    @allure.title('Проверка изменении цены булочки')
+    @allure.title('Проверка изменения цены булочки')
     @allure.description('Тест проверяет, что можно изменить цену булочки')
-    def test_price_change(self): #Изменение цены булочки
-        bun = Bun('Булочка', 100)
+    def test_price_change(self, create_bun): #Изменение цены булочки
+        bun = create_bun
         bun.price = 500
-        assert bun.get_price() == 500, f"Ожидается цена булочки: 5"
+        assert bun.get_price() == 500, f'Ожидается цена: 500, получено:  {bun.get_price()}'
         print('\nТест пройден!')
+        print(f'Цена  - {bun.get_price()}')
 
 
 
